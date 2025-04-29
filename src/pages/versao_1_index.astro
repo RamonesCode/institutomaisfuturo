@@ -1,0 +1,53 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Instituto Mais Futuro</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="/logo.jpg" alt="Instituto Mais Futuro">
+    <h1>Nosso site está em construção</h1>
+    <p>Em breve você poderá conhecer mais sobre o Instituto Mais Futuro.</p>
+  </div>
+</body>
+</html>
