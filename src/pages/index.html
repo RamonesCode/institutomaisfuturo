@@ -58,6 +58,48 @@
             cursor: pointer;
             color: #666;
         }
+        /* Mobile menu styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        /* Otimizações para mobile */
+        @media (max-width: 640px) {
+            .hero-section {
+                padding-top: 28px;
+            }
+            .hero-title {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .program-card {
+                margin-bottom: 1.5rem;
+            }
+            .testimonial-card {
+                margin-bottom: 1.5rem;
+            }
+            .donation-options {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .contact-section {
+                flex-direction: column;
+            }
+            .contact-info {
+                margin-bottom: 2rem;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
@@ -95,28 +137,56 @@
             <div class="hidden md:block">
                 <a href="#doar" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition duration-300">Doar</a>
             </div>
-            <button class="md:hidden text-gray-700 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
+            <button id="mobileMenuButton" class="md:hidden text-gray-700 focus:outline-none">
+                <button class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden bg-white w-full px-4">
+                <div class="py-4 space-y-3">
+                    <a href="#sobre" class="block py-2 text-gray-700 hover:text-blue-600">Sobre</a>
+                    <a href="#programas" class="block py-2 text-gray-700 hover:text-blue-600">Programas</a>
+                    <a href="#impacto" class="block py-2 text-gray-700 hover:text-blue-600">Impacto</a>
+                    <a href="#depoimentos" class="block py-2 text-gray-700 hover:text-blue-600">Depoimentos</a>
+                    <a href="#contato" class="block py-2 text-gray-700 hover:text-blue-600">Contato</a>
+                    <a href="#doar" class="block py-2 text-blue-600 font-medium">Doar</a>
+                </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-gradient pt-32 pb-20 text-white">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-12 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Transformando vidas através da educação e oportunidades</h1>
-                <p class="text-xl mb-8 opacity-90">O Instituto Mais Futuro atua criando pontes entre jovens talentos e o mercado de trabalho, oferecendo capacitação, mentoria e acesso a oportunidades.</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#programas" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-center transition duration-300">Conheça nossos programas</a>
-                    <a href="#doar" class="border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-full font-bold text-center transition duration-300">Apoie nossa causa</a>
+    <section class="hero-gradient hero-section pt-24 pb-16 text-white">
+        <section class="hero-gradient pt-32 pb-20 text-white">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="hero-title text-3xl md:text-4xl font-bold leading-tight mb-4">Transformando vidas através da educação e oportunidades</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Transformando vidas através da educação e oportunidades</h1>
+                    <p class="hero-subtitle text-lg mb-6 opacity-90">O Instituto Mais Futuro atua criando pontes entre jovens talentos e o mercado de trabalho.</p>
+                    <p class="text-xl mb-8 opacity-90">O Instituto Mais Futuro atua criando pontes entre jovens talentos e o mercado de trabalho, oferecendo capacitação, mentoria e acesso a oportunidades.</p>
+                    <div class="cta-buttons flex flex-col sm:flex-row gap-3">
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#programas" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-2 rounded-full font-bold text-center transition duration-300 text-sm">Conheça nossos programas</a>
+                        <a href="#programas" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-center transition duration-300">Conheça nossos programas</a>
+                        <a href="#doar" class="border-2 border-white hover:bg-white hover:text-blue-600 px-6 py-2 rounded-full font-bold text-center transition duration-300 text-sm">Apoie nossa causa</a>
+                        <a href="#doar" class="border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-full font-bold text-center transition duration-300">Apoie nossa causa</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://via.placeholder.com/400x300" alt="Jovens aprendendo no Instituto Mais Futuro" class="rounded-lg shadow-2xl animate-float w-full max-w-md">
+                    <img src="/public/youngPeopleLearning.png" alt="Jovens aprendendo no Instituto Mais Futuro" class="rounded-lg shadow-2xl animate-float max-w-full h-auto">
+                </div>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <img src="/public/youngPeopleLearning.png" alt="Jovens aprendendo no Instituto Mais Futuro" class="rounded-lg shadow-2xl animate-float max-w-full h-auto">
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Stats Section -->
     <section class="bg-gray-50 py-16">
@@ -203,7 +273,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Program 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 card-hover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 card-hover program-card">
                     <div class="h-48 bg-blue-600 flex items-center justify-center">
                         <i class="fas fa-laptop-code text-white text-6xl"></i>
                     </div>
@@ -229,7 +299,7 @@
                 </div>
                 
                 <!-- Program 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 card-hover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 card-hover program-card">
                     <div class="h-48 bg-green-600 flex items-center justify-center">
                         <i class="fas fa-chart-line text-white text-6xl"></i>
                     </div>
@@ -255,7 +325,7 @@
                 </div>
                 
                 <!-- Program 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 card-hover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition duration-300 card-hover program-card">
                     <div class="h-48 bg-purple-600 flex items-center justify-center">
                         <i class="fas fa-hands-helping text-white text-6xl"></i>
                     </div>
@@ -728,6 +798,21 @@
         closePopup.addEventListener('click', closePopupHandler);
         acceptPopup.addEventListener('click', closePopupHandler); 
 
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
         // Back to Top Button
         const backToTopButton = document.getElementById('backToTop');
         
@@ -766,11 +851,6 @@
             });
         });
         
-        // Mobile menu toggle (would need more implementation)
-        const mobileMenuButton = document.querySelector('.md\\:hidden');
-        mobileMenuButton.addEventListener('click', () => {
-            alert('Menu mobile seria implementado aqui com mais detalhes');
-        });
     </script>
 </body>
 </html>
